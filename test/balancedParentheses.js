@@ -35,3 +35,30 @@ test( 'BALANCED PARENTHESES: returns false for string with no parentheses', t =>
     t.equal( result, false, 'result is correct' );
     t.end();
 } );
+
+test( 'BALANCED PARENTHESES: returns false for string with unclosed parentheses', t => {
+    const input = '((x + y)';
+    const result = fpt.balancedParentheses( input );
+
+    t.equal( typeof result, 'boolean', 'generated a boolean result' );
+    t.equal( result, false, 'result is correct' );
+    t.end();
+} );
+
+test( 'BALANCED PARENTHESES: returns false for string with too many closed parentheses', t => {
+    const input = '(x + y))';
+    const result = fpt.balancedParentheses( input );
+
+    t.equal( typeof result, 'boolean', 'generated a boolean result' );
+    t.equal( result, false, 'result is correct' );
+    t.end();
+} );
+
+test( 'BALANCED PARENTHESES: returns false for string with too many open parentheses', t => {
+    const input = '(((((x + y)';
+    const result = fpt.balancedParentheses( input );
+
+    t.equal( typeof result, 'boolean', 'generated a boolean result' );
+    t.equal( result, false, 'result is correct' );
+    t.end();
+} );
