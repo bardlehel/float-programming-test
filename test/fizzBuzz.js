@@ -9,6 +9,20 @@ test( 'FIZZBUZZ: exports fizzBuzz method', t => {
     t.end();
 } );
 
+test( 'FIZZBUZZ: fails if length param is NaN', t => {
+    const result = fpt.fizzBuzz( "x" );
+
+    t.equal( result, null, 'result is null' );
+    t.end();
+} );
+
+test( 'FIZZBUZZ: fails if length is below 1', t => {
+    const result = fpt.fizzBuzz( 0 );
+
+    t.equal( result, null, 'result is null' );
+    t.end();
+} );
+
 test( 'FIZZBUZZ: returns a proper array based on input length', t => {
     const result = fpt.fizzBuzz( 10 );
 

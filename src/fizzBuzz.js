@@ -20,6 +20,9 @@ module.exports = ( length ) => {
   var retArray = [];
   var value = 0;
 
+  if(typeof(length) != "number") return null;
+  if(length < 1) return null;
+
   for (var i = 0; i != length; i++) {
     value = i + 1;
     if (value % 5 === 0 && value % 3 === 0 && value >= 15)
